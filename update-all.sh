@@ -3,7 +3,7 @@ cd ~/klipper
 git pull
 
 make clean KCONFIG_CONFIG=config.skr
-#make menuconfig KCONFIG_CONFIG=config.skr
+make menuconfig KCONFIG_CONFIG=config.skr
 make KCONFIG_CONFIG=config.skr
 read -p "SKR Mini E3 V2.0 firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 
