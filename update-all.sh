@@ -12,9 +12,10 @@ read -p "SKR Mini E3 V2.0 firmware flashed, please check above for any errors. P
 
 make clean KCONFIG_CONFIG=config.rpi
 make menuconfig KCONFIG_CONFIG=config.rpi
-
 make KCONFIG_CONFIG=config.rpi
 read -p "RPi firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
+
 make flash KCONFIG_CONFIG=config.rpi
+read -p "RPi firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 
 sudo service klipper start
