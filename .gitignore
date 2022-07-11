@@ -1,5 +1,4 @@
 .gitignore
-README.md
 mainsail.cfg
 moonraker.conf
 .moonraker.conf.bkp
