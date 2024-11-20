@@ -25,6 +25,24 @@ echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
 echo -e -n '\e[0;0m'
 read
 
+# Flash toolhead MCU - LDO NiteHawk-SB
+make clean KCONFIG_CONFIG=klipper-ldo-nitehawk-sb.config
+make menuconfig KCONFIG_CONFIG=klipper-ldo-nitehawk-sb.config
+make KCONFIG_CONFIG=klipper-ldo-nitehawk-sb.config
+
+echo -e -n "\e[0;33mLDO NiteHawk SB MCU firmware built, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
+
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_E6635C469F663F28-if00 KCONFIG_CONFIG=klipper-ldo-nitehawk-sb.config
+echo -e -n "\e[0;33mLDO NiteHawk SB MCU firmware flashed, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
+
+
+
 # Flash Host MCU - Raspberry Pi
 make clean KCONFIG_CONFIG=klipper-raspberry-pi.config
 make menuconfig KCONFIG_CONFIG=klipper-raspberry-pi.config
